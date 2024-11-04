@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaPhoneAlt, FaEnvelope, FaRegHeart, FaShoppingCart, FaSearch, FaChevronDown } from "react-icons/fa";
 
 function Header() {
   return (

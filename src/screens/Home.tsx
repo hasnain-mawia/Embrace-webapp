@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Slider from '../components/Slider'
-import { CustomerReview } from '../components/Customer-reviews'
 import Accordion from '../components/Accordion'
 import { FaArrowRightLong } from "react-icons/fa6";
 import CountUp from 'react-countup';
 import { Slider2 } from '../components/Slider2';
 import Testimonial from '../components/testimonial';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import { NavHashLink  } from 'react-router-hash-link';
+
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Home() {
   useEffect(()=>{
@@ -47,15 +49,32 @@ const Talkto2 = (e:any) =>{
     setErrors(validationErrors);
     if(Object.keys(validationErrors).length === 0){
       alert('Email Send Successfully');
-
       setEmail2('')
-
-    }
-}
-
+    }}
 
   return (
     <>
+    {/* --------------------- Header [Start] ------------------------- */}
+    <div className='border-b-[1px] border-[#e0e0e0] sticky top-0 bg-white py-3 shadow-lg z-20'>
+      <div className='max-w-[1550px] mx-auto'>
+        <div className='flex item-center justify-between'>
+          <div><a href="/"><img className='w-[180px]' src={require('../assets/images/logo.png')} alt="" /></a></div>
+          <div className='flex items-center'>
+            <ul className='flex items-center gap-2'>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth to="#howitsworks" activeClassName="active">How Its Works</NavHashLink></li>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink smooth  to="#ourworks">Our Works</NavHashLink></li>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth  to="#">Pricing</NavHashLink></li>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth  to="#">About us</NavHashLink></li>
+            </ul>
+          </div>
+          <div>
+            <button className='bg-[#3461FF] px-[24px] py-[16px] rounded-full text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100'>Book A Call</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* --------------------- Header [End] ------------------------- */}
       <div className='max-w-[1550px] mx-auto my-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 sm:h-[80vh]'>
           <div className='h-full flex flex-col item-center justify-center space-y-5'>
@@ -70,25 +89,25 @@ const Talkto2 = (e:any) =>{
           </div>
           <div className='flex flex-col justify-end items-center h-full'>
             <div className='flex'>
-            <img data-aosName="flip-right" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl1.png')} alt="" />
+            <img data-aos="flip-right" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl1.png')} alt="" />
             <div className='relative w-full'>
-            <img data-aosName="flip-left" data-aos-offset="300" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl2.png')} alt="" />
-            <img data-aosName="flip-left" data-aos-mirror="true" className='w-[120px] absolute top-[-20px] left-[-90px]' src={require('../assets/images/sl3.png')} alt="" />
+            <img data-aos="flip-left" data-aos-offset="300" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl2.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className='w-[120px] absolute top-[-20px] left-[-90px]' src={require('../assets/images/sl3.png')} alt="" />
             </div>
             </div>
             
             <div className='flex'>
-            <img data-aosName="flip-left" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl4.png')} alt="" />
-            <img data-aosName="flip-left" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl5.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl4.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className='w-full' src={require('../assets/images/sl5.png')} alt="" />
             </div>
             
             <div className='flex'>
             <div className='relative w-full'>
-            <img data-aosName="flip-left" data-aos-mirror="true" className='w-full h-full' src={require('../assets/images/sl6.png')} alt="" />
-            <img data-aosName="flip-left" data-aos-mirror="true" className='w-[120px] absolute top-[-30px] right-[-70px] z-10' src={require('../assets/images/sl9.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className='w-full h-full' src={require('../assets/images/sl6.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className='w-[120px] absolute top-[-30px] right-[-70px] z-10' src={require('../assets/images/sl9.png')} alt="" />
             </div>
-            <img data-aosName="flip-left" data-aos-mirror="true" className=' h-full' src={require('../assets/images/sl7.png')} alt="" />
-            <img data-aosName="flip-left" data-aos-mirror="true" className=' h-full' src={require('../assets/images/sl8.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className=' h-full' src={require('../assets/images/sl7.png')} alt="" />
+            <img data-aos="flip-left" data-aos-mirror="true" className=' h-full' src={require('../assets/images/sl8.png')} alt="" />
             </div>
 
           </div>
@@ -124,7 +143,7 @@ const Talkto2 = (e:any) =>{
           <div className='grid grid-cols-2 gap-5'>
             <div>
               <h3 className='text-[60px] font-bold'><CountUp enableScrollSpy={true} start={0} end={50} delay={2}/> +</h3>
-              <p>More revenues for the brand</p>
+              <p>Brands trust us</p>
               </div>
             <div>
               <h3 className='text-[60px] font-bold'><CountUp enableScrollSpy={true} start={0} end={24} delay={2}/> +</h3>
@@ -145,38 +164,38 @@ const Talkto2 = (e:any) =>{
           {/* --------------------- Commitments [End] -------------------------- */}
 
           {/* --------------------- How Its Works [Start] -------------------------- */}
-          <div className='bg-[#fafafa] py-[100px]'>
+          <div id='howitsworks' className='bg-[#fafafa] py-[100px]'>
         <div className='max-w-[1550px] mx-auto space-y-10'>
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
-            <div className='space-y-5'>
+            <div data-aos="zoom-in-left" data-aos-mirror="true" className='space-y-5'>
               <h3 className='text-[40px] font-semibold'>How its Works</h3>
               <p className='w-[550px]'>We believe that the best way to create successful marketing campaigns is to work closely with our clients to understand their goals and challenges.</p>
              <img src={require('../assets/images/Rectangle 160.png')} alt="" />
             </div>
             <div>
           <div className='space-y-10'>
-            <div className='flex items-center gap-10'>
+            <div data-aos="zoom-in-right" data-aos-mirror="true" className='flex items-center gap-10'>
               <img src={require('../assets/images/majesticons_dollar-circle.png')} alt="" />
               <div className='w-[400px]'>
               <h3 className='text-[30px]'>Discovery</h3>
               <p>We meet with you to learn about your business, your goals, and your target audience.</p>
               </div>
               </div>
-            <div className='flex items-center gap-10'>
+            <div data-aos="zoom-in-right" data-aos-mirror="true" className='flex items-center gap-10'>
               <img src={require('../assets/images/majesticons_dollar-circle1.png')} alt="" />
               <div className='w-[400px]'>
               <h3 className='text-[30px]'>Statergy</h3>
               <p>We meet with you to learn about your business, your goals, and your target audience.</p>
               </div>
               </div>
-            <div className='flex items-center gap-10'>
+            <div data-aos="zoom-in-right" data-aos-mirror="true" className='flex items-center gap-10'>
               <img src={require('../assets/images/majesticons_dollar-circle3.png')} alt="" />
               <div className='w-[400px]'>
               <h3 className='text-[30px]'>Execution</h3>
               <p>We meet with you to learn about your business, your goals, and your target audience.</p>
               </div>
               </div>
-            <div className='flex items-center gap-10'>
+            <div data-aos="zoom-in-right" data-aos-mirror="true" className='flex items-center gap-10'>
               <img src={require('../assets/images/majesticons_dollar-circle4.png')} alt="" />
               <div className='w-[400px]'>
               <h3 className='text-[30px]'>Measurement</h3>
@@ -188,25 +207,25 @@ const Talkto2 = (e:any) =>{
             </div>
           {/* --------------------- How its Works [End] -------------------------- */}
 
-          <div className='space-y-5 flex flex-col justify-center items-center'>
+          <div id='ourworks' className='space-y-5 flex flex-col justify-center items-center pt-[100px]'>
               <h3 className='text-[40px] font-semibold text-center'>Our Works</h3>
               <p className='text-center'>A glimpse of our portfolio</p>
               <div className='flex gap-5 w-full'>
              <div >
               <span className=' hover:bg-black w-[600px] hover:opacity-80 duration-100 z-10 rounded-[50px]'>
-              <img data-aosName="zoom-in-left" data-aos-mirror="true" className='w-[600px] z-0' src={require('../assets/images/Rectangle 161.png')} alt="" />
+              <img data-aos="zoom-in-left" data-aos-mirror="true" className='w-[600px] z-0' src={require('../assets/images/Rectangle 161.png')} alt="" />
               </span>
               <p className='text-center text-[30px] mt-2'>Apple</p>
               </div>
               <div>
               <span className=' hover:bg-black w-[600px] hover:opacity-80 duration-100 z-10 rounded-[50px]'>
-             <img data-aosName="zoom-in-up" data-aos-mirror="true" className='w-[600px]' src={require('../assets/images/Rectangle 2.png')} alt="" />
+             <img data-aos="zoom-in-up" data-aos-mirror="true" className='w-[600px]' src={require('../assets/images/Rectangle 2.png')} alt="" />
               </span>
               <p className='text-center text-[30px] mt-2'>Coca-Cola</p>
               </div>
               <div>
               <span className=' hover:bg-black w-[600px] hover:opacity-80 duration-100 z-10 rounded-[50px]'>
-             <img data-aosName="zoom-in-left" data-aos-mirror="true" className='w-[600px]' src={require('../assets/images/Rectangle 3.png')} alt="" />
+             <img data-aos="zoom-in-left" data-aos-mirror="true" className='w-[600px]' src={require('../assets/images/Rectangle 3.png')} alt="" />
               </span>
               <p className='text-center text-[30px] mt-2'>Nike</p>
               </div>
@@ -217,7 +236,7 @@ const Talkto2 = (e:any) =>{
           </div>
 
        {/* ------------------------- CTA Banner [Start] ------------------ */}
-      <div data-aosName="flip-up" data-aos-mirror="true" className='max-w-[1550px] mx-auto space-y-10 '>
+      <div data-aos="flip-up" data-aos-mirror="true" className='max-w-[1550px] mx-auto space-y-10 '>
       <div className="cta-banner grid grid-cols-1 sm:grid-cols-2 items-center p-[100px]">
         <div><h2 className='text-white text-[60px]'>Elevate Your <br/> Brand Today!</h2></div>
         <div className='space-y-5'>
@@ -231,14 +250,14 @@ const Talkto2 = (e:any) =>{
         <div className='grid grid-cols-1 sm:grid-cols-2 my-[150px]'>
           <div className='space-y-5'>
             <div className='flex gap-2'>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team1.png')} alt=""/>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team2.png')} alt=""/>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team3.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team1.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team2.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team3.png')} alt=""/>
             </div>
             <div className='flex gap-2'>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team4.png')} alt=""/>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team5.png')} alt=""/>
-              <img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team6.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team4.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team5.png')} alt=""/>
+              <img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/team6.png')} alt=""/>
             </div>
           </div>
           <div className='flex flex-col items-baseline justify-between'>
@@ -254,13 +273,13 @@ const Talkto2 = (e:any) =>{
         </div>
          
         {/* ------------------------- CTA Banner 2 [Start] ------------------ */}
-      <div data-aosName="flip-up" data-aos-mirror="true" className='max-w-[1550px] mx-auto '>
+      <div data-aos="flip-up" data-aos-mirror="true" className='max-w-[1550px] mx-auto '>
       <div className="cta-banner2 grid grid-cols-1 sm:grid-cols-2 items-center p-[70px]">
         <div className='space-y-5'>
           <h3 className='text-white text-[60px] leading-[70px]'>Start Your Journey <br/> With Us Now</h3>
           <button className='bg-[#3461FF] px-10 py-3 rounded-full text-[20px] text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'>Start Now</button>
         </div>
-        <div className='flex justify-end'><img data-aosName="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/arrow.png')} alt=""/></div>
+        <div className='flex justify-end'><img data-aos="zoom-in-right" data-aos-mirror="true" src={require('../assets/images/arrow.png')} alt=""/></div>
       </div>
       </div>
        {/* ------------------------- CTA Banner 2 [End] ------------------ */}
@@ -290,7 +309,6 @@ const Talkto2 = (e:any) =>{
       </div>
       </div>
        {/* ------------------------- CTA Banner 2 [End] ------------------ */}
-
       </div>
     </>
   )

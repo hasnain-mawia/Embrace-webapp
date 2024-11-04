@@ -1,5 +1,6 @@
 body{
   background-color: #FCFCFC;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar{
@@ -20,7 +21,9 @@ body{
 .swiper-slide{
   padding: 15px;
   background:#F8F9FF;
+  margin: 50px 0;
   border-radius: 20px;
+  box-shadow: rgba(84, 84, 84, 0.1) 0px 10px 50px;
 }
 .swiper-slide-active{
   background:#3461FF;
@@ -70,4 +73,8 @@ body{
 
 .accordion button .accordion-title {
   padding: 1em 1.5em 1em 0;
+}
+.active{
+  background-color: aqua;
+  
 }
