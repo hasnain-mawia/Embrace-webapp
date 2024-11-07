@@ -1,6 +1,7 @@
 body{
   background-color: #FCFCFC;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar{
@@ -74,7 +75,4 @@ body{
 .accordion button .accordion-title {
   padding: 1em 1.5em 1em 0;
 }
-.active{
-  background-color: aqua;
-  
-}
+

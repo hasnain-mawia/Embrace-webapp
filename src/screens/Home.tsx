@@ -43,8 +43,8 @@ const Talkto2 = (e:any) =>{
   const validationErrors:any = {};
   if(!Email2.trim()){
     validationErrors.Email2 = "Subscription Email Must Required"
-    }else if(!Email.match(/^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/)){
-    validationErrors.Email = "Email Is Not Valid"
+    }else if(!Email2.match(/^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/)){
+    validationErrors.Email2 = "Email Is Not Valid"
     }
     setErrors(validationErrors);
     if(Object.keys(validationErrors).length === 0){
@@ -55,16 +55,16 @@ const Talkto2 = (e:any) =>{
   return (
     <>
     {/* --------------------- Header [Start] ------------------------- */}
-    <div className='border-b-[1px] border-[#e0e0e0] sticky top-0 bg-white py-3 shadow-lg z-20'>
+    <header className='border-b-[1px] border-[#e0e0e0] sticky top-0  sm:bg-white py-3 shadow-lg z-20'>
       <div className='max-w-[1550px] mx-auto'>
-        <div className='flex item-center justify-between'>
+        <div className='block sm:flex item-center justify-between'>
           <div><a href="/"><img className='w-[180px]' src={require('../assets/images/logo.png')} alt="" /></a></div>
           <div className='flex items-center'>
-            <ul className='flex items-center gap-2'>
-              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth to="#howitsworks" activeClassName="active">How Its Works</NavHashLink></li>
+            <ul className='block sm:flex items-center gap-2'>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink smooth to="#howitsworks">How Its Works</NavHashLink></li>
               <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink smooth  to="#ourworks">Our Works</NavHashLink></li>
-              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth  to="#">Pricing</NavHashLink></li>
-              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth  to="#">About us</NavHashLink></li>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white cursor-not-allowed'>Pricing</li>
+              <li className='p-2 rounded-md hover:hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'><NavHashLink  smooth  to="#about-us">About us</NavHashLink></li>
             </ul>
           </div>
           <div>
@@ -72,7 +72,7 @@ const Talkto2 = (e:any) =>{
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
     {/* --------------------- Header [End] ------------------------- */}
       <div className='max-w-[1550px] mx-auto my-10'>
@@ -263,7 +263,7 @@ const Talkto2 = (e:any) =>{
           <div className='flex flex-col items-baseline justify-between'>
           <div className='space-y-5'><h2 className='text-[60px]'>Meet Our Team</h2>
             <p className='text-[#535252]'>Discover the brilliance behind  Embrace. Our team blends<br/> innovation and artistry to craft digital wonders that captivate</p></div>
-            <button className='bg-[#3461FF] px-10 py-3 rounded-full text-[20px] text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white'>Learn More</button>
+            <button className='bg-[#3461FF] px-10 py-3 rounded-full text-[20px] text-white hover:bg-gradient-to-r from-cyan-500 to-blue-500 duration-100 hover:text-white' id='about-us'>Learn More</button>
           </div>
         </div>
         
